@@ -66,9 +66,18 @@ var aboutText = topContent.firstElementChild.nextElementSibling.firstElementChil
 var middleImage = document.querySelector(".main-content img")
 
 var services = document.querySelector('.bottom-content .text-content:nth-child(1) h4')
+var servicesContent = document.querySelector('.bottom-content .text-content:nth-child(1) p')
 var product = document.querySelector('.bottom-content .text-content:nth-child(2) h4')
+var productContent = document.querySelector('.bottom-content .text-content:nth-child(2) p')
 var vision = document.querySelector('.bottom-content .text-content:nth-child(3) h4')
+var visionContent = document.querySelector('.bottom-content .text-content:nth-child(3) p')
 
+var contactHeader = document.querySelector(".contact h4")
+var contactAddress = document.querySelector(".contact p:nth-child(2)")
+var contactPhone = document.querySelector(".contact p:nth-child(3)")
+var contactEmail = document.querySelector(".contact p:nth-child(4)")
+
+var footer = document.querySelector("footer p")
 
 // ## Task 2: Update the HTML with the JSON data
 
@@ -95,8 +104,19 @@ aboutText.textContent = siteContent["main-content"]['about-content']
 middleImage.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
 services.textContent = siteContent["main-content"]["services-h4"]
+servicesContent.textContent = siteContent["main-content"]["services-content"]
 product.textContent = siteContent["main-content"]["product-h4"]
+productContent.textContent = siteContent["main-content"]["product-content"]
 vision.textContent = siteContent["main-content"]["vision-h4"]
+visionContent.textContent = siteContent["main-content"]["vision-content"]
+
+contactHeader.textContent = siteContent["contact"]["contact-h4"]
+contactAddress.textContent = siteContent["contact"]["address"]
+contactPhone.textContent = siteContent["contact"]["phone"]
+contactEmail.textContent = siteContent["contact"]["email"]
+
+footer.textContent = siteContent["footer"]["copyright"]
+
 
 
 
@@ -104,9 +124,26 @@ vision.textContent = siteContent["main-content"]["vision-h4"]
 
 // * [ ] Change the color of the navigation text to be green.
 
+const navText = document.querySelectorAll('nav a')
+navText.forEach(link => link.style.color = 'green')
+
 
 
 // * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+
+
+const navSys = document.querySelector('nav')
+
+const beforeLink = document.createElement('a')
+beforeLink.textContent = "I COME BEFORE ALL"
+
+const afterLink = document.createElement('a')
+afterLink.textContent = "I COME AFTER ALL"
+
+navSys.appendChild(afterLink)
+
+navSys.prepend(beforeLink)
+
 
 
 
